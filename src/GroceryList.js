@@ -1,7 +1,10 @@
 import React from 'react'
+import Item from './Item' 
 
-export default function GroceryList() {
+export default function GroceryList({ items, toggleItem }) {
   return (
-    <div>GroceryList</div>
+    items.map(item => {
+      return <Item key={item.id} toggleItem={toggleItem} item={item} />
+    })
   )
 }
